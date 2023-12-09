@@ -226,9 +226,9 @@ This style guide is mostly based on the standards that are currently prevalent i
 
   - Avoid using an array index as `key` prop, prefer a stable ID. eslint: [`react/no-array-index-key`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md)
 
-> Why? Not using a stable ID [is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) because it can negatively impact performance and cause issues with component state.
+    > Why? Not using a stable ID [is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)            because it can negatively impact performance and cause issues with component state.
 
-We don’t recommend using indexes for keys if the order of items may change.
+    We don’t recommend using indexes for keys if the order of items may change.
 
       ```jsx
       // bad
@@ -250,7 +250,7 @@ We don’t recommend using indexes for keys if the order of items may change.
 
   - Always define explicit default for all non-required .
 
-  > Why? propTypes are a form of documentation, and providing default means the reader of your code doesn’t have to assume as much. In addition, it can mean that your code can omit certain type checks.
+    > Why? propTypes are a form of documentation, and providing default means the reader of your code doesn’t have to assume as much. In          addition, it can mean that your code can omit certain type checks.
 
       ```jsx
     
