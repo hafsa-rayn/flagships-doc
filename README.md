@@ -216,13 +216,13 @@ This style guide is mostly based on the standards that are currently prevalent i
 
   > Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.
 
-  ```jsx
-  // bad
-  <div accessKey="h" />
-
-  // good
-  <div />
-  ```
+    ```jsx
+    // bad
+    <div accessKey="h" />
+  
+    // good
+    <div />
+    ```
 
   - Avoid using an array index as `key` prop, prefer a stable ID. eslint: [`react/no-array-index-key`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md)
 
@@ -230,75 +230,75 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 We don’t recommend using indexes for keys if the order of items may change.
 
-  ```jsx
-  // bad
-  {todos.map((todo, index) =>
-    <Todo
-      {...todo}
-      key={index}
-    />
-  )}
+    ```jsx
+    // bad
+    {todos.map((todo, index) =>
+      <Todo
+        {...todo}
+        key={index}
+      />
+    )}
+  
+    // good
+    {todos.map(todo => (
+      <Todo
+        {...todo}
+        key={todo.id}
+      />
+    ))}
+    ```
 
-  // good
-  {todos.map(todo => (
-    <Todo
-      {...todo}
-      key={todo.id}
-    />
-  ))}
-  ```
+  - Always define explicit default for all non-required .
 
-  - Always define explicit defaultProps for all non-required props.
+  > Why? propTypes are a form of documentation, and providing default means the reader of your code doesn’t have to assume as much. In addition, it can mean that your code can omit certain type checks.
 
-  > Why? propTypes are a form of documentation, and providing defaultProps means the reader of your code doesn’t have to assume as much. In addition, it can mean that your code can omit certain type checks.
+    ```jsx
+  
+    type NumbersOverviewCard = {
+      heading: string | ReactElement
+      digit: number
+      isLoading: boolean
+      tooltipData?: string | undefined
+    }
+  
+    // good
+      export const NumbersOverviewCard = ({
+      heading,
+      digit,
+      isLoading,
+      tooltipData = undefined,
+    }
+  
+    // bad
+     export const NumbersOverviewCard = ({
+      heading,
+      digit,
+      isLoading,
+      tooltipData = undefined,,
+    }
+    ```
 
-  ```jsx
-
-  type NumbersOverviewCardProps = {
-    heading: string | ReactElement
-    digit: number
-    isLoading: boolean
-    tooltipData?: string | undefined
-  }
-
-  // good
-    export const NumbersOverviewCard = ({
-    heading,
-    digit,
-    isLoading,
-    tooltipData = undefined,
-  }
-
-  // bad
-   export const NumbersOverviewCard = ({
-    heading,
-    digit,
-    isLoading,
-    tooltipData = undefined,,
-  }
-  ```
-
-  - Use spread props sparingly.
-  > Why? Otherwise you’re more likely to pass unnecessary props down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
+  - Use spread  sparingly.
+  > Why? Otherwise you’re more likely to pass unnecessary  down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
 
   Exceptions:
 
-  - HOCs that proxy down props and hoist propTypes
+  - HOCs that proxy down  and hoist propTypes
 
-  ```jsx
-  function HOC(WrappedComponent) {
-    return class Proxy extends React.Component {
-      Proxy.propTypes = {
-        text: PropTypes.string,
-        isLoading: PropTypes.bool
-      };
-
-      render() {
-        return <WrappedComponent {...this.props} />
+    ```jsx
+    function HOC(WrappedComponent) {
+      return class Proxy extends React.Component {
+        Proxy.propTypes = {
+          text: PropTypes.string,
+          isLoading: PropTypes.bool
+        };
+  
+        render() {
+          return <WrappedComponent {...this.} />
+        }
       }
     }
-  }
-  ```
+    ```
 
   Notes for use:
   Filter out unnecessary props when possible. Also, use [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) to help prevent bugs.
