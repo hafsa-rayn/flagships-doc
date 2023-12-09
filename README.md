@@ -230,53 +230,53 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 We don’t recommend using indexes for keys if the order of items may change.
 
-    ```jsx
-    // bad
-    {todos.map((todo, index) =>
-      <Todo
-        {...todo}
-        key={index}
-      />
-    )}
-  
-    // good
-    {todos.map(todo => (
-      <Todo
-        {...todo}
-        key={todo.id}
-      />
-    ))}
-    ```
+      ```jsx
+      // bad
+      {todos.map((todo, index) =>
+        <Todo
+          {...todo}
+          key={index}
+        />
+      )}
+    
+      // good
+      {todos.map(todo => (
+        <Todo
+          {...todo}
+          key={todo.id}
+        />
+      ))}
+      ```
 
   - Always define explicit default for all non-required .
 
   > Why? propTypes are a form of documentation, and providing default means the reader of your code doesn’t have to assume as much. In addition, it can mean that your code can omit certain type checks.
 
-    ```jsx
-  
-    type NumbersOverviewCard = {
-      heading: string | ReactElement
-      digit: number
-      isLoading: boolean
-      tooltipData?: string | undefined
-    }
-  
-    // good
-      export const NumbersOverviewCard = ({
-      heading,
-      digit,
-      isLoading,
-      tooltipData = undefined,
-    }
-  
-    // bad
-     export const NumbersOverviewCard = ({
-      heading,
-      digit,
-      isLoading,
-      tooltipData = undefined,,
-    }
-    ```
+      ```jsx
+    
+      type NumbersOverviewCard = {
+        heading: string | ReactElement
+        digit: number
+        isLoading: boolean
+        tooltipData?: string | undefined
+      }
+    
+      // good
+        export const NumbersOverviewCard = ({
+        heading,
+        digit,
+        isLoading,
+        tooltipData = undefined,
+      }
+    
+      // bad
+       export const NumbersOverviewCard = ({
+        heading,
+        digit,
+        isLoading,
+        tooltipData = undefined,,
+      }
+      ```
 
   - Use spread  sparingly.
   > Why? Otherwise you’re more likely to pass unnecessary  down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
