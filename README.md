@@ -46,21 +46,6 @@ This style guide is mostly based on the standards that are currently prevalent i
     const reservationItem = <ReservationCard />;
     ```
 
-## Declaration
-
-  - Do not use `displayName` for naming components. Instead, name the component by reference.
-
-    ```jsx
-    // bad
-    export default React.createClass({
-      displayName: 'ReservationCard',
-      // stuff goes here
-    });
-
-    // good
-    export default class ReservationCard extends React.Component {
-    }
-    ```
 
 ## Alignment
 
@@ -131,16 +116,16 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Quotes
 
-  - Always use double quotes (`"`) for JSX attributes, but single quotes (`'`) for all other JS. eslint: [`jsx-quotes`](https://eslint.org/docs/rules/jsx-quotes)
+  - Always use single quotes (`'`) for all. prettier: [`singleQuote: true,`](https://eslint.org/docs/rules/jsx-quotes)
 
-    > Why? Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
+    > Why? Just so
 
     ```jsx
     // bad
-    <Foo bar='bar' />
+    <Foo bar="bar" />
 
     // good
-    <Foo bar="bar" />
+    <Foo bar='bar' />
 
     // bad
     <Foo style={{ left: "20px" }} />
@@ -228,31 +213,6 @@ This style guide is mostly based on the standards that are currently prevalent i
 
     // good
     <img src="hello.jpg" role="presentation" />
-    ```
-
-  - Do not use words like "image", "photo", or "picture" in `<img>` `alt` props. eslint: [`jsx-a11y/img-redundant-alt`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
-
-    > Why? Screenreaders already announce `img` elements as images, so there is no need to include this information in the alt text.
-
-    ```jsx
-    // bad
-    <img src="hello.jpg" alt="Picture of me waving hello" />
-
-    // good
-    <img src="hello.jpg" alt="Me waving hello" />
-    ```
-
-  - Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/#usage_intro). eslint: [`jsx-a11y/aria-role`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
-
-    ```jsx
-    // bad - not an ARIA role
-    <div role="datepicker" />
-
-    // bad - abstract ARIA role
-    <div role="range" />
-
-    // good
-    <div role="button" />
     ```
 
   - Do not use `accessKey` on elements. eslint: [`jsx-a11y/no-access-key`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
