@@ -1,4 +1,4 @@
-# FLAGDPS - LATS x KMS React Style Guide
+# FLAGDPS - React Style Guide
 
 This style guide is mostly based on the standards that are currently prevalent in JavaScript.
 
