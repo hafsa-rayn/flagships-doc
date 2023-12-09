@@ -11,7 +11,6 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Quotes](#quotes)
   1. [Spacing](#spacing)
   1. [Props](#props)
-  1. [Refs](#refs)
   1. [Parentheses](#parentheses)
   1. [Tags](#tags)
 
