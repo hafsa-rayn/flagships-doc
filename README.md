@@ -1,4 +1,4 @@
-# FLAGDPS - React Style Guide
+# FLAGDPS - Style Guide
 
 This style guide is mostly based on the standards that are currently prevalent in JavaScript.
 
@@ -8,6 +8,7 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Naming](#naming)
   1. [Declaration](#declaration)
   1. [Alignment](#alignment)
+  2. [Types](#types)
   1. [Quotes](#quotes)
   1. [Spacing](#spacing)
   1. [Props](#props)
@@ -15,11 +16,19 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Tags](#tags)
 
 ## Basic Rules
-
-  - Only include one React component per file.
-    - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
-  - Always use JSX syntax.
-  - Do not use `React.createElement` unless you’re initializing the app from a file that is not JSX.
+    
+    **Folder Structure**
+    - Organize each feature within its dedicated folder in the feature directory.
+    - Within each feature folder, include separate directories for components, types, and queries.
+    - Centralize reusable or shared elements in the shared folder.
+    - Only include one React component per file.
+      - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+        
+    **Styling**
+    - Prioritize the use of Ant Design components over custom-coded components
+    - Favor Ant Design styling, for example using Ant Design flex for layout
+    - For Ant Design global component styling, incorporate it in `shared/providers/theme.ts`
+    - If custom styles are necessary, create a .less file specific to that component
 
 ## Naming
 
@@ -110,6 +119,9 @@ This style guide is mostly based on the standards that are currently prevalent i
     )}
     ```
 
+## Types
+  - Define types consistently throughout the codebase and organize them in their respective types folder.
+  
 ## Quotes
 
   - Always use single quotes (`'`) for all. prettier: [`singleQuote: true,`](https://eslint.org/docs/rules/jsx-quotes)
