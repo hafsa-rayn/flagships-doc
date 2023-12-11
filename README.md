@@ -33,6 +33,9 @@ This style guide is mostly based on the standards that are currently prevalent i
   - **Comments**:
     - Include a concise comment for each component to explain its purpose.
 
+  - **Code Formatting**:
+    - Adhere to formatting rules diligently before making any commits.
+
 ## Naming
 
   - **Extensions**: Use `.jsx` extension for React components. eslint: [`react/jsx-filename-extension`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md)
