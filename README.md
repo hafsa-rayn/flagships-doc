@@ -22,7 +22,7 @@ This style guide is mostly based on the standards that are currently prevalent i
     - Within each feature folder, include separate directories for components, types, and queries.
     - Centralize reusable or shared elements in the shared folder.
     - Only include one React component per file.
-      - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-                functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless)
+      - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless)
         
   - **Styling**:
     - Prioritize the use of Ant Design components over custom-coded components
