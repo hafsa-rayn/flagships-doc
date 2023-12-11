@@ -17,13 +17,18 @@ This style guide is mostly based on the standards that are currently prevalent i
 
 ## Basic Rules
 
-    - **Folder Structure**:
+  - **Folder Structure**:
     - Organize each feature within its dedicated folder in the feature directory.
     - Within each feature folder, include separate directories for components, types, and queries.
     - Centralize reusable or shared elements in the shared folder.
     - Only include one React component per file.
-      - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-                functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-                               react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+      - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-                functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-                               react/blob/master/docs/rules/no-multi-comp.md#ignorestateless)
         
+  - **Styling**:
+    - Prioritize the use of Ant Design components over custom-coded components
+    - Favor Ant Design styling, for example using Ant Design flex for layout
+    - For Ant Design global component styling, incorporate it in `shared/providers/theme.ts`
+    - If custom styles are necessary, create a .less file specific to that component
 
 ## Naming
 
