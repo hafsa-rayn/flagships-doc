@@ -29,6 +29,9 @@ This style guide is mostly based on the standards that are currently prevalent i
     - Favor Ant Design styling, for example using Ant Design flex for layout
     - For Ant Design global component styling, incorporate it in `shared/providers/theme.ts`
     - If custom styles are necessary, create a .less file specific to that component
+   
+  - **Comments**:
+    - Include a concise comment for each component to explain its purpose.
 
 ## Naming
 
